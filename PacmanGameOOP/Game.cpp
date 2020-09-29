@@ -41,10 +41,10 @@ void Game::run()
                 {
                 case Keyboard::I: insertCoin(); break;
                 case Keyboard::Enter: pressBtnStart(); break;
-                case Keyboard::A: moveJStick(Vector2i(-1, 0)); break;
-                case Keyboard::D: moveJStick(Vector2i(+1, 0)); break;
-                case Keyboard::S: moveJStick(Vector2i(0, -1)); break;
                 case Keyboard::W: moveJStick(Vector2i(0, +1)); break;
+                case Keyboard::A: moveJStick(Vector2i(-1, 0)); break;
+                case Keyboard::S: moveJStick(Vector2i(0, -1)); break;
+                case Keyboard::D: moveJStick(Vector2i(+1, 0)); break;               
                 default:
                     break;
                 }
