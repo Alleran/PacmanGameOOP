@@ -9,19 +9,19 @@ Game::~Game()
 {
 }
 
-Font Game::getFont()
+Font& Game::getFont()
 {
-	return Font();
+    return m_font;
 }
 
-Texture Game::getLogo()
+Texture& Game::getLogo()
 {
-	return Texture();
+	return m_logo;
 }
 
-Texture Game::getTexture()
+Texture& Game::getTexture()
 {
-	return Texture();
+	return m_texture;
 }
 
 void Game::run()
@@ -39,12 +39,12 @@ void Game::run()
             {   
                 switch (event.key.code)
                 {
-                case Keyboard::I: insertCoin(); break;
-                case Keyboard::Enter: pressBtnStart(); break;
-                case Keyboard::W: moveJStick(Vector2i(0, +1)); break;
-                case Keyboard::A: moveJStick(Vector2i(-1, 0)); break;
-                case Keyboard::S: moveJStick(Vector2i(0, -1)); break;
-                case Keyboard::D: moveJStick(Vector2i(+1, 0)); break;               
+                case Keyboard::I: m_currentState->insertCoin(); break;
+                case Keyboard::Enter: m_currentState->pressBtnStart(); break;
+                case Keyboard::W: m_currentState->moveJStick(Vector2i(0, +1)); break;
+                case Keyboard::A: m_currentState->moveJStick(Vector2i(-1, 0)); break;
+                case Keyboard::S: m_currentState->moveJStick(Vector2i(0, -1)); break;
+                case Keyboard::D: m_currentState->moveJStick(Vector2i(+1, 0)); break;
                 default:
                     break;
                 }
@@ -55,17 +55,7 @@ void Game::run()
     }
 }
 
-void Game::insertCoin()
+void Game::changeGameState(GameState::State gameState)
 {
-    cout << "Geldeinwurf" << endl;
-}
-
-void Game::pressBtnStart()
-{
-    cout << "Zum starten bitte \"Enter\" druecken." << endl;
-}
-
-void Game::moveJStick(Vector2i direction)
-{
-    cout << "Bewegen" << endl;
+    m_currentState = m_gameStates[gameState];
 }

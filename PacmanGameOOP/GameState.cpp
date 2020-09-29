@@ -1,4 +1,5 @@
 #include "GameState.hpp"
+#include "Game.hpp"
 
 GameState::GameState(Game* game):m_game(game)
 {
@@ -12,10 +13,19 @@ Game* GameState::getGameState() const
 
 NoCoinState::NoCoinState(Game* game):GameState(game)
 {
+	m_sprite.setTexture(game->getLogo());
+	m_sprite.setPosition(20, 50);
+
+	m_text.setFont(game->getFont());
+	m_text.setString("Bitte Mony");
+
+	m_text.setPosition(220, 150);
+	m_displayText = true;
 }
 
 void NoCoinState::insertCoin()
 {
+	getGameState()->changeGameState(GameState::Ready);
 }
 
 void NoCoinState::pressBtnStart()
@@ -34,13 +44,13 @@ void NoCoinState::draw(RenderWindow& window)
 {
 }
 
-bool NoCoinState::m_displayText()
-{
-	return false;
-}
-
 ReadyState::ReadyState(Game* game) :GameState(game)
 {
+	m_text.setFont(game->getFont());
+	m_text.setString("Mit \"Enter\" starten sie ein Spiel...");
+	m_text.setCharacterSize(14);
+
+	m_text.setPosition(220, 150);	
 }
 
 void ReadyState::insertCoin()
@@ -89,6 +99,13 @@ void PlayingState::draw(RenderWindow& window)
 
 LostState::LostState(Game* game) :GameState(game)
 {
+	m_text.setFont(game->getFont());
+	m_text.setString("YOU DIED");
+	m_text.setCharacterSize(14);
+	m_text.setPosition(220, 150);
+
+	m_countdownText.setFont(game->getFont());
+	m_countdownText.setCharacterSize(12);
 }
 
 void LostState::insertCoin()
@@ -113,6 +130,10 @@ void LostState::draw(RenderWindow& window)
 
 WinState::WinState(Game* game) :GameState(game)
 {
+	m_text.setFont(game->getFont());
+	m_text.setString("Gewonnen - eine Gratis Runde...");
+	m_text.setCharacterSize(14);
+	m_text.setPosition(220, 150);
 }
 
 void WinState::insertCoin()

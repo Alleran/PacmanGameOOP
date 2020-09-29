@@ -7,7 +7,7 @@ class GameState
 {
 public:
 	enum State {
-		NoCoin, Ready, Playing, Lost, Win
+		NoCoin, Ready, Playing, Lost, Win, Count
 	};
 	GameState(Game* game);
 	Game* getGameState() const;
@@ -34,7 +34,7 @@ public:
 private:
 	Text m_text;
 	Sprite m_sprite;
-	bool m_displayText();
+	bool m_displayText;
 };
 class ReadyState : public GameState {
 public:
@@ -44,6 +44,8 @@ public:
 	void moveJStick(Vector2i direction);
 	void update(Time diff);
 	void draw(RenderWindow& window);
+private:	
+	Text m_text;
 };
 class PlayingState : public GameState {
 public:
@@ -53,6 +55,8 @@ public:
 	void moveJStick(Vector2i direction);
 	void update(Time diff);
 	void draw(RenderWindow& window);
+private:
+
 };
 class LostState : public GameState {
 public:
@@ -62,6 +66,10 @@ public:
 	void moveJStick(Vector2i direction);
 	void update(Time diff);
 	void draw(RenderWindow& window);
+private:
+	Text m_text;
+	Time m_countdown;
+	Text m_countdownText;
 };
 class WinState : public GameState {
 public:
@@ -71,4 +79,6 @@ public:
 	void moveJStick(Vector2i direction);
 	void update(Time diff);
 	void draw(RenderWindow& window);
+private:
+	Text m_text;	
 };
