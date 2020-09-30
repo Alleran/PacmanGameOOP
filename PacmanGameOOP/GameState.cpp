@@ -89,8 +89,9 @@ void ReadyState::draw(RenderWindow& window)
 	window.draw(m_text);
 }
 
-PlayingState::PlayingState(Game* game) :GameState(game)
+PlayingState::PlayingState(Game* game) :GameState(game), m_ghost(game->getTexture()), m_pacman(game->getTexture())
 {
+
 }
 
 void PlayingState::insertCoin()

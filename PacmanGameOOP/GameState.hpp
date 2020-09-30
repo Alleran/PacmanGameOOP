@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Pacman.hpp"
+#include "Ghost.hpp"
 using namespace sf;
 class Game;
 
@@ -21,6 +23,8 @@ public:
 
 private:
 	Game *m_game;
+	Ghost& m_ghost;
+	Pacman& m_pacman;
 };
 
 class NoCoinState : public GameState {
@@ -55,8 +59,6 @@ public:
 	void moveJStick(Vector2i direction);
 	void update(Time diff);
 	void draw(RenderWindow& window);
-private:
-
 };
 class LostState : public GameState {
 public:

@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Animator.cpp" />
     <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="Dot.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.hpp" />
+    <ClInclude Include="Animator.hpp" />
     <ClInclude Include="Bonus.hpp" />
     <ClInclude Include="Dot.hpp" />
     <ClInclude Include="Game.hpp" />
