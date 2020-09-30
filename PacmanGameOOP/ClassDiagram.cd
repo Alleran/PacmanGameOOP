@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Actor" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAQAAAAgAAgAAAAAIAAAAAEAAAEAAABIAAFAAA=</HashCode>
+      <FileName>Actor.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bonus" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAIAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bonus.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAA4AAMAAAAgAAABAAAAAAAAiAAQAIAAAAAAAAAAA=</HashCode>
+      <FileName>Game.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameState" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAACAAAKAAAAAAAACAAAAAAAEAAAEIAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoCoinState" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAgCAAAKAAAAgAAAAAAQAAAAEAAAEAAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReadyState" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAgCAAAKAAAAAAAAAAAAAAAAEAAAEAAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayingState" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAACAAAKAAAAAAAAAAAAAAAAEAAAEAAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LostState" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgCACAKAAAAAAAAAAAAAAEAEIAAEAAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinState" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgCEAAKAAAAAAAAAAAAAAAAEAAAEAAA=</HashCode>
+      <FileName>GameState.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ghost" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAQAAgAIAAAAAABAIgAAAAAAEAAAEAAA=</HashCode>
+      <FileName>Ghost.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pacman" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAgAIAAAAAAhAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Pacman.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
