@@ -2,7 +2,24 @@
 
 Game::Game() :m_window(VideoMode(800, 600), "Pacman - the Game")
 {
-
+    if (!m_font.loadFromFile("assets/fonts/PAC-FONT.TTF"))
+    {
+        throw std::runtime_error("Font konnte nicht geladen werden");
+    }    
+    if (!m_logo.loadFromFile("assets/pacman_logo.png"))
+    {
+        throw std::runtime_error("Logo konnte nicht geladen werden");
+    }
+    if (!m_texture.loadFromFile("assets/texture.png"))
+    {
+        throw std::runtime_error("Texture konnte nicht geladen werden");
+    }
+    m_gameStates[GameState::NoCoin] = new NoCoinState(this);
+    m_gameStates[GameState::Ready] = new ReadyState(this);
+    m_gameStates[GameState::Playing] = new PlayingState(this);
+    m_gameStates[GameState::Lost] = new LostState(this);
+    m_gameStates[GameState::Win] = new WinState(this);
+    changeGameState(GameState::NoCoin);
 }
 
 Game::~Game()
@@ -50,7 +67,10 @@ void Game::run()
                 }
             }
         }
-        m_window.clear();        
+        m_currentState->update(seconds(1));
+        m_window.clear();  
+        //hier zeichnen
+        m_currentState->draw(m_window);
         m_window.display();        
     }
 }

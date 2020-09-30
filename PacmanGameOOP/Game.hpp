@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <vector>
+#include <array>
 #include <iostream>
 #include "GameState.hpp"
 using namespace sf;
@@ -26,7 +26,7 @@ public:
 private:
 	RenderWindow m_window;
 	GameState* m_currentState;
-	vector<GameState*> m_gameStates;
+	array<GameState*,GameState::State::Count> m_gameStates;
 	Font m_font;
 	Texture m_logo;
 	Texture m_texture;
