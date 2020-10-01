@@ -153,6 +153,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="MainApp.cpp" />
+    <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Pacman.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameState.hpp" />
     <ClInclude Include="Ghost.hpp" />
+    <ClInclude Include="Maze.hpp" />
     <ClInclude Include="Pacman.hpp" />
   </ItemGroup>
   <ItemGroup>

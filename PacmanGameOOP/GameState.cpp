@@ -1,6 +1,9 @@
 #include "GameState.hpp"
 #include "Game.hpp"
 #include <SFML/Graphics.hpp>
+#include "Pacman.hpp"
+#include "Ghost.hpp"
+#include "Maze.hpp"
 
 using namespace sf;
 
@@ -89,9 +92,9 @@ void ReadyState::draw(RenderWindow& window)
 	window.draw(m_text);
 }
 
-PlayingState::PlayingState(Game* game) :GameState(game)
-
+PlayingState::PlayingState(Game* game) :GameState(game), m_pacman(nullptr)
 {
+	m_pacman = new Pacman(game->getTexture());
 
 }
 
@@ -123,7 +126,9 @@ void PlayingState::update(Time diff)
 
 void PlayingState::draw(RenderWindow& window)
 {
-	
+	window.draw(m_pacman);
+	window.draw(m_ghosts);
+	window.draw(m_maze);
 }
 
 LostState::LostState(Game* game) :GameState(game)

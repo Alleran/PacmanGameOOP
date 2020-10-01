@@ -60,7 +60,7 @@ public:
 	void draw(RenderWindow& window);
 private:
 	Pacman* m_pacman;
-	std::vector <Ghost*> m_ghosts;
+	std::vector<Ghost*> m_ghosts;	
 };
 class LostState : public GameState {
 public:
