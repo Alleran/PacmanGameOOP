@@ -10,7 +10,7 @@ void centerDraw(T& drawing) {
 	drawing.setOrigin(bound.width / 2, bound.height / 2);
 }
 
-GameState::GameState(Game* game) :m_game(game)
+GameState::GameState(Game* game) :m_game(game) 
 {
 
 }
@@ -77,7 +77,7 @@ void ReadyState::pressBtnStart()
 }
 
 void ReadyState::moveJStick(Vector2i direction)
-{	
+{
 }
 
 void ReadyState::update(Time diff)
@@ -89,7 +89,8 @@ void ReadyState::draw(RenderWindow& window)
 	window.draw(m_text);
 }
 
-PlayingState::PlayingState(Game* game) :GameState(game), m_ghost(game->getTexture()), m_pacman(game->getTexture())
+PlayingState::PlayingState(Game* game) :GameState(game)
+
 {
 
 }
@@ -100,6 +101,7 @@ void PlayingState::insertCoin()
 
 void PlayingState::pressBtnStart()
 {
+
 }
 
 void PlayingState::moveJStick(Vector2i direction)
@@ -153,7 +155,7 @@ void LostState::update(Time diff)
 {
 	m_countdown += diff;
 	if (m_countdown.asSeconds() >= 10)
-	{	
+	{
 		getGameState()->changeGameState(GameState::Ready);
 	}
 	m_countdownText.setString("Für weiter einen weiteren Coin einwerfen");
@@ -192,7 +194,7 @@ void WinState::update(Time diff)
 	timeBuffer += diff;
 
 	if (timeBuffer.asSeconds() > 10)
-	{	
+	{
 		getGameState()->changeGameState(GameState::Ready);
 	}
 }

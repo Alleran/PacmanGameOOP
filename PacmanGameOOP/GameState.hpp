@@ -22,9 +22,7 @@ public:
 	virtual void draw(RenderWindow &window) = 0;
 
 private:
-	Game *m_game;
-	Ghost& m_ghost;
-	Pacman& m_pacman;
+	Game *m_game;	
 };
 
 class NoCoinState : public GameState {
@@ -50,6 +48,7 @@ public:
 	void draw(RenderWindow& window);
 private:	
 	Text m_text;
+	//Pacman m_pacman;
 };
 class PlayingState : public GameState {
 public:
@@ -59,6 +58,9 @@ public:
 	void moveJStick(Vector2i direction);
 	void update(Time diff);
 	void draw(RenderWindow& window);
+private:
+	Pacman* m_pacman;
+	std::vector <Ghost*> m_ghosts;
 };
 class LostState : public GameState {
 public:

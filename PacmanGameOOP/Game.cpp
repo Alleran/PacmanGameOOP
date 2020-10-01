@@ -43,6 +43,7 @@ Texture& Game::getTexture()
 
 void Game::run()
 {
+    Clock frameClock;
     while (m_window.isOpen())
     {
         Event event;
@@ -67,7 +68,7 @@ void Game::run()
                 }
             }
         }
-        m_currentState->update(seconds(1));
+        m_currentState->update(frameClock.restart());
         m_window.clear();  
         //hier zeichnen
         m_currentState->draw(m_window);
